@@ -11,7 +11,8 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  Alert
+  Alert,
+  Platform
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -78,6 +79,12 @@ const styles = StyleSheet.create({
   flexRow: {
     flexDirection: "row"
   },
+  white: {
+    color: "#fff"
+  },
+  fontSize: {
+    fontSize: Platform.OS === "ios" ? 14 : 16
+  },
   container: {
     // flex: 1,
     alignItems: "center",
@@ -88,13 +95,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F5FCFF",
     padding: 8,
-    borderRadius: 16,
+    height: Platform.OS === "ios" ? "auto" : 32,
+    borderRadius: 32,
     marginLeft: 8,
     marginRight: 8
   },
-  white: {
-    color: "#fff"
-  },
+
   removeStyle: {
     position: "absolute",
     right: 3.7
