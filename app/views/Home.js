@@ -5,7 +5,9 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+
+import SearchBox from "../components/SearchBox";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -19,14 +21,23 @@ export default class Home extends Component<Props> {
   constructor(props) {
     super(props);
     // 初始状态
-    this.state = {};
+    this.state = {
+      content: `I come from Home`
+    };
   }
+
+  goToHomeDetail = () => {
+    this.props.navigation.navigate("HomeDetail", { content: this.state.content });
+  };
 
   // 渲染
   render() {
     return (
       <View style={styles.container}>
-        <Text>Home</Text>
+        <SearchBox />
+        <TouchableOpacity onPress={() => this.goToHomeDetail()}>
+          <Text>Home</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -35,8 +46,8 @@ export default class Home extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    // justifyContent: "center",
+    // alignItems: "center",
     backgroundColor: "#F5FCFF"
   }
 });

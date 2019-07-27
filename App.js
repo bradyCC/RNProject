@@ -5,32 +5,21 @@
  * @format
  * @flow
  */
-import React, { Fragment } from "react";
-import { SafeAreaView, StyleSheet, Platform, View } from "react-native";
+import React from "react";
+import { StyleSheet, View } from "react-native";
 import AppNavigator from "./app/router/index";
 
-const content = Platform.select({
-  ios: () => (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "F5FCFF" }}>
-      <AppNavigator />
-    </SafeAreaView>
-  ),
-  android: () => (
-    <View style={{ flex: 1, backgroundColor: "F5FCFF" }}>
+const App = () => {
+  return (
+    <View style={styles.container}>
       <AppNavigator />
     </View>
-  )
-})();
-
-const App = () => {
-  return <Fragment>{content}</Fragment>;
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#F5FCFF"
   }
 });

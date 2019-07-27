@@ -18,8 +18,7 @@ import Shop from "../views/Shop";
 import Mine from "../views/Mine";
 import More from "../views/More";
 
-// import More from "../views/More";
-// import HomePage from "../views/HomePage";
+import HomeDetail from "../views/HomeDetail";
 // import ShopDetail from "../views/ShopDetail";
 // import MineDetail from "../views/MineDetail";
 // import MoreInfo from "../views/MoreInfo";
@@ -33,12 +32,12 @@ const HomeRouteConfigs = {
       title: "首页"
     }
   },
-  // HomePage: {
-  //   screen: HomePage,
-  //   navigationOptions: {
-  //     title: "首页信息"
-  //   }
-  // }
+  HomeDetail: {
+    screen: HomeDetail,
+    navigationOptions: {
+      title: "详情页"
+    }
+  }
 };
 const ShopRouteConfigs = {
   Shop: {
@@ -88,7 +87,7 @@ const StackNavigatorConfig = {
   defaultNavigationOptions: {
     headerStyle: {
       gesturesEnabled: false,
-      backgroundColor: "rgb(16, 142, 233)"
+      backgroundColor: "#108ee9" // rgb(16, 142, 233)
     },
     headerTitleStyle: {
       color: "#fff"
