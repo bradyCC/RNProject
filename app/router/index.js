@@ -5,6 +5,7 @@
  * @Description:
  */
 import React from "react";
+import { Platform } from "react-native";
 import {
   createStackNavigator,
   createBottomTabNavigator,
@@ -28,7 +29,9 @@ const HomeRouteConfigs = {
   Home: {
     screen: Home,
     navigationOptions: {
-      // header: null,
+      header: Platform.select({
+        android: null
+      }),
       title: "首页"
     }
   },

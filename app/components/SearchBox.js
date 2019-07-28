@@ -94,9 +94,10 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     backgroundColor: "#F5FCFF",
-    padding: 8,
-    height: Platform.OS === "ios" ? "auto" : 32,
-    borderRadius: 32,
+    padding: Platform.OS === "ios" ? 6 : 2,
+    paddingLeft: 8,
+    paddingRight: 8,
+    borderRadius: 16,
     marginLeft: 8,
     marginRight: 8
   },
