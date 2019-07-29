@@ -93,9 +93,7 @@ const styles = StyleSheet.create({
     padding: 8
   },
   switch: {
-    padding: Platform.OS === "ios" ? "auto" : 0,
     position: Platform.OS === "ios" ? "relative" : "absolute",
-    right: Platform.OS === "ios" ? "auto" : 0,
-    height: Platform.OS === "ios" ? "auto" : 10
+    right: Platform.OS === "ios" ? "auto" : 0
   }
 });
