@@ -29,6 +29,9 @@ const HomeRouteConfigs = {
   Home: {
     screen: Home,
     navigationOptions: {
+      header: Platform.select({
+        android: null
+      }),
       title: "首页"
     }
   },
@@ -43,6 +46,9 @@ const ShopRouteConfigs = {
   Shop: {
     screen: Shop,
     navigationOptions: {
+      header: Platform.select({
+        android: null
+      }),
       title: "商家"
     }
   },
@@ -57,6 +63,9 @@ const MineRouteConfigs = {
   Mine: {
     screen: Mine,
     navigationOptions: {
+      header: Platform.select({
+        android: null
+      }),
       title: "我的"
     }
   },
@@ -71,6 +80,9 @@ const MoreRouteConfigs = {
   More: {
     screen: More,
     navigationOptions: {
+      header: Platform.select({
+        android: null
+      }),
       title: "更多"
     }
   },
@@ -85,9 +97,9 @@ const MoreRouteConfigs = {
 const StackNavigatorConfig = {
   headerLayoutPreset: "center",
   defaultNavigationOptions: {
-    header: Platform.select({
-      android: null
-    }),
+    // header: Platform.select({
+    //   android: null
+    // }),
     headerStyle: {
       gesturesEnabled: false,
       backgroundColor: "#108ee9" // rgb(16, 142, 233)
