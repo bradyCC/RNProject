@@ -37,9 +37,10 @@ export default class Home extends Component<Props> {
     return (
       <View style={styles.container}>
         <SearchBox />
-        <TouchableOpacity onPress={() => this.goToHomeDetail()}>
-          <Text>Home</Text>
-        </TouchableOpacity>
+        {/*<TouchableOpacity onPress={() => this.goToHomeDetail()}>*/}
+        {/*  <Text>Home</Text>*/}
+        {/*</TouchableOpacity>*/}
+
       </View>
     );
   }
