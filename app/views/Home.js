@@ -8,6 +8,7 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
 import SearchBox from "../components/SearchBox";
+import MineCeil from "../components/MineCeil";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -40,7 +41,15 @@ export default class Home extends Component<Props> {
         {/*<TouchableOpacity onPress={() => this.goToHomeDetail()}>*/}
         {/*  <Text>Home</Text>*/}
         {/*</TouchableOpacity>*/}
-
+        <MineCeil title="测试" iconStyle={{ top: -31, left: -96 }} />
+        <MineCeil title="测试" iconStyle={{ top: -36, left: -150 }} />
+        <MineCeil title="测试" iconStyle={{ top: -36, left: -203 }} />
+        <MineCeil title="测试" iconStyle={{ top: -36, left: -256 }} />
+        <MineCeil title="测试" iconStyle={{ top: -85, left: -71 }} />
+        <MineCeil title="测试" iconStyle={{ top: -87, left: -124 }} />
+        <MineCeil title="测试" iconStyle={{ top: -85, left: -176 }} />
+        <MineCeil title="测试" iconStyle={{ top: -85, left: -229 }} />
+        <MineCeil title="测试" iconStyle={{ top: -85, left: -281 }} />
       </View>
     );
   }

@@ -8,7 +8,7 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 import TopBar from "../components/TopBar";
-import Ceil from "../components/Ceil";
+import MoreCeil from "../components/MoreCeil";
 
 type Props = {};
 export default class More extends Component<Props> {
@@ -30,26 +30,25 @@ export default class More extends Component<Props> {
     return (
       <View style={styles.container}>
         <TopBar title="更多" icon="ios-cog" props={this.props} to="Home" />
-        <Ceil title="扫一扫" icon={true} marginTop={10} />
+        <MoreCeil title="扫一扫" icon={true} marginTop={10} />
 
         <View style={styles.ceil}>
-          <Ceil title="省流量模式" icon={false} />
-          <Ceil title="消息提醒" icon={true} />
-          <Ceil title="邀请好友使用小码哥电商" icon={true} />
-          <Ceil title="清空缓存" icon={true} />
+          <MoreCeil title="省流量模式" icon={false} />
+          <MoreCeil title="消息提醒" icon={true} />
+          <MoreCeil title="邀请好友使用团码" icon={true} />
+          <MoreCeil title="清空缓存" icon={true} text="13.4M" />
         </View>
 
         <View style={styles.ceil}>
-          <Ceil title="意见反馈" icon={true} />
-          <Ceil title="问卷调查" icon={true} />
-          <Ceil title="支付帮助" icon={true} />
-          <Ceil title="网络诊断" icon={true} />
-          <Ceil title="关于团码" icon={true} />
-          <Ceil title="我要应聘" icon={true} />
+          <MoreCeil title="问卷调查" icon={true} />
+          <MoreCeil title="支付帮助" icon={true} />
+          <MoreCeil title="网络诊断" icon={true} />
+          <MoreCeil title="关于团码" icon={true} />
+          <MoreCeil title="我要应聘" icon={true} />
         </View>
 
         <View style={styles.ceil}>
-          <Ceil title="精品应用" icon={true} />
+          <MoreCeil title="精品应用" icon={true} />
         </View>
       </View>
     );

@@ -5,19 +5,27 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Switch, Platform } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  Switch,
+  Platform
+} from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import PropTypes from "prop-types";
 
 type Props = {};
-export default class Ceil extends Component<Props> {
+export default class MoreCeil extends Component<Props> {
   // 默认属性
   static defaultProps = {};
 
   // 属性类型
   static propTypes = {
     title: PropTypes.string,
-    icon: PropTypes.bool
+    icon: PropTypes.bool,
+    text: PropTypes.string
   };
 
   // 构造
@@ -31,12 +39,13 @@ export default class Ceil extends Component<Props> {
 
   // 渲染
   render() {
-    const { title, icon, marginTop } = this.props;
+    const { title, icon, text } = this.props;
     let content = "";
     if (icon) {
       content = (
         <TouchableOpacity onPress={() => {}}>
-          <View>
+          <View style={styles.direction}>
+            <Text style={{ marginRight: 10 }}>{text}</Text>
             <Icon
               // name={focused ? "ios-home" : "ios-home"}
               name="ios-arrow-forward"
@@ -60,7 +69,7 @@ export default class Ceil extends Component<Props> {
     }
     return (
       <TouchableOpacity onPress={() => {}}>
-        <View style={styles.container}>
+        <View style={[styles.container, styles.direction]}>
           <View>
             <Text>{title}</Text>
           </View>
@@ -72,8 +81,10 @@ export default class Ceil extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
+  direction: {
+    flexDirection: "row"
+  },
   container: {
-    flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#fff",
