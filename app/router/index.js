@@ -5,7 +5,7 @@
  * @Description:
  */
 import React from "react";
-import { Platform } from "react-native";
+import { Platform, View, TouchableOpacity } from "react-native";
 import {
   createStackNavigator,
   createBottomTabNavigator,
@@ -79,12 +79,25 @@ const MineRouteConfigs = {
 const MoreRouteConfigs = {
   More: {
     screen: More,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       header: Platform.select({
         android: null
       }),
-      title: "更多"
-    }
+      title: "更多",
+      headerRight: (
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <Icon
+            // name={focused ? "ios-home" : "ios-home"}
+            name="ios-cog"
+            size={26}
+            style={{ color: "#fff" }}
+          />
+        </TouchableOpacity>
+      ),
+      headerRightContainerStyle: {
+        paddingRight: 8
+      }
+    })
   },
   // MoreInfo: {
   //   screen: MoreInfo,

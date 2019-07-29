@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Platform } from "react-native";
 
 import TopBar from "../components/TopBar";
 import MoreCeil from "../components/MoreCeil";
@@ -29,7 +29,9 @@ export default class More extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <TopBar title="更多" icon="ios-cog" props={this.props} to="Home" />
+        {Platform.OS === "ios" ? null : (
+          <TopBar title="更多" icon="ios-cog" props={this.props} to="Home" />
+        )}
         <MoreCeil title="扫一扫" icon={true} marginTop={10} />
 
         <View style={styles.ceil}>
