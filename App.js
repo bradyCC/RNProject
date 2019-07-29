@@ -5,9 +5,10 @@
  * @format
  * @flow
  */
-import React, { Fragment } from "react";
+import React, { Fragment, Component } from "react";
 import { StyleSheet, Platform, View, SafeAreaView } from "react-native";
 import AppNavigator from "./app/router/index";
+import SplashScreen from "react-native-splash-screen";
 
 const content = Platform.select({
   ios: (
@@ -22,9 +23,15 @@ const content = Platform.select({
   )
 });
 
-const App = () => {
-  return <Fragment>{content}</Fragment>;
-};
+export default class App extends Component {
+  render() {
+    return <Fragment>{content}</Fragment>;
+  }
+
+  componentDidMount() {
+    SplashScreen.hide(); // 关闭启动屏
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -32,5 +39,3 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5FCFF"
   }
 });
-
-export default App;
