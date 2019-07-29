@@ -69,7 +69,7 @@ export default class MineCeil extends Component<Props> {
 const styles = StyleSheet.create({
   direction: {
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "center"
   },
   container: {
     justifyContent: "space-between",
@@ -79,15 +79,19 @@ const styles = StyleSheet.create({
     padding: 8
   },
   imageIcon: {
-    width: 36,
-    height: 36,
+    // width: 36,
+    // height: 36,
+    width: 36 * 0.7,
+    height: 36 * 0.7,
     position: "relative",
     overflow: "hidden",
-    marginRight: 10
+    marginRight: 8
   },
   imageBackground: {
-    width: 382,
-    height: 150,
+    // width: 382,
+    // height: 150,
+    width: 382 * 0.7,
+    height: 150 * 0.7,
     position: "absolute"
   }
 });
