@@ -27,7 +27,9 @@ export default class Home extends Component<Props> {
   }
 
   goToHomeDetail = () => {
-    this.props.navigation.navigate("HomeDetail", { content: this.state.content });
+    this.props.navigation.navigate("HomeDetail", {
+      content: this.state.content
+    });
   };
 
   // 渲染

@@ -29,9 +29,6 @@ const HomeRouteConfigs = {
   Home: {
     screen: Home,
     navigationOptions: {
-      header: Platform.select({
-        android: null
-      }),
       title: "首页"
     }
   },
@@ -88,6 +85,9 @@ const MoreRouteConfigs = {
 const StackNavigatorConfig = {
   headerLayoutPreset: "center",
   defaultNavigationOptions: {
+    header: Platform.select({
+      android: null
+    }),
     headerStyle: {
       gesturesEnabled: false,
       backgroundColor: "#108ee9" // rgb(16, 142, 233)

@@ -7,6 +7,8 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
+import TopBar from "../components/TopBar";
+
 type Props = {};
 export default class More extends Component<Props> {
   // 默认属性
@@ -26,6 +28,7 @@ export default class More extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <TopBar title="更多" icon="ios-cog" props={this.props} to="Home" />
         <Text>More</Text>
       </View>
     );
@@ -35,8 +38,8 @@ export default class More extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    // justifyContent: "center",
+    // alignItems: "center",
     backgroundColor: "#F5FCFF"
   }
 });

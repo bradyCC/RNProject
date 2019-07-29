@@ -101,7 +101,6 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     marginRight: 8
   },
-
   removeStyle: {
     position: "absolute",
     right: 3.7
