@@ -50,21 +50,37 @@ export default class Mine extends Component<Props> {
         {/*<MineCeil title="测试" iconStyle={{ top: -60, left: -198 }} />*/}
 
         <View>
-          <MineCeil title="我的订单" iconStyle={{ top: -60, left: -87 }} />
-        </View>
-        <View style={styles.ceil}>
-          <MineCeil title="抵用券" iconStyle={{ top: -24, left: -178 }} />
-          <MineCeil title="我要合作" iconStyle={{ top: -58, left: -49 }} />
-        </View>
-        <View style={styles.ceil}>
           <MineCeil
-            title="商城积分"
-            iconStyle={{ top: -24, left: -104 }}
-            text="1024"
+            title="我的订单"
+            iconStyle={{ top: -60, left: -160 }}
+            text="查看全部订单"
           />
         </View>
         <View style={styles.ceil}>
-          <MineCeil title="今日推荐" iconStyle={{ top: -60, left: -160 }} />
+          <MineCeil
+            title="钱包"
+            iconStyle={{ top: -20, left: -67 }}
+            text="账户余额：￥100.00"
+          />
+          <MineCeil
+            title="抵用券"
+            iconStyle={{ top: -24, left: -178 }}
+            text="0"
+          />
+        </View>
+        <View style={styles.ceil}>
+          <MineCeil title="商城积分" iconStyle={{ top: -24, left: -104 }} />
+        </View>
+        <View style={styles.ceil}>
+          <MineCeil title="今日推荐" iconStyle={{ top: -60, left: -87 }} />
+        </View>
+
+        <View style={styles.ceil}>
+          <MineCeil
+            title="我要合作"
+            iconStyle={{ top: -58, left: -49 }}
+            text="轻松开店，招财进宝"
+          />
         </View>
       </View>
     );
