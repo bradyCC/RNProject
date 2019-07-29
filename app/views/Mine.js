@@ -5,7 +5,8 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
+import MineCeil from "../components/MineCeil";
 
 type Props = {};
 export default class Mine extends Component<Props> {
@@ -26,7 +27,45 @@ export default class Mine extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Mine</Text>
+        {/*原始比例*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -31, left: -96 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -36, left: -150 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -36, left: -203 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -36, left: -256 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -85, left: -71 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -87, left: -124 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -85, left: -176 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -85, left: -229 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -85, left: -281 }} />*/}
+
+        {/*等比缩放*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -20, left: -67 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -24, left: -104 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -24, left: -142 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -24, left: -178 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -58, left: -49 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -60, left: -87 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -60, left: -124 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -60, left: -160 }} />*/}
+        {/*<MineCeil title="测试" iconStyle={{ top: -60, left: -198 }} />*/}
+
+        <View>
+          <MineCeil title="我的订单" iconStyle={{ top: -60, left: -87 }} />
+        </View>
+        <View style={styles.ceil}>
+          <MineCeil title="抵用券" iconStyle={{ top: -24, left: -178 }} />
+          <MineCeil title="我要合作" iconStyle={{ top: -58, left: -49 }} />
+        </View>
+        <View style={styles.ceil}>
+          <MineCeil
+            title="商城积分"
+            iconStyle={{ top: -24, left: -104 }}
+            text="1024"
+          />
+        </View>
+        <View style={styles.ceil}>
+          <MineCeil title="今日推荐" iconStyle={{ top: -60, left: -160 }} />
+        </View>
       </View>
     );
   }
@@ -35,8 +74,11 @@ export default class Mine extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    // justifyContent: "center",
+    // alignItems: "center",
     backgroundColor: "#F5FCFF"
+  },
+  ceil: {
+    marginTop: 10
   }
 });
