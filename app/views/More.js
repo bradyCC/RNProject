@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Platform } from "react-native";
+import { StyleSheet, View, Text, Platform, ScrollView } from "react-native";
 
 import TopBar from "../components/TopBar";
 import MoreCeil from "../components/MoreCeil";
@@ -28,7 +28,7 @@ export default class More extends Component<Props> {
   // 渲染
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         {Platform.OS === "ios" ? null : (
           <TopBar title="更多" icon="ios-cog" props={this.props} to="Home" />
         )}
@@ -52,7 +52,7 @@ export default class More extends Component<Props> {
         <View style={styles.ceil}>
           <MoreCeil title="精品应用" icon={true} />
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

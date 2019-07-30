@@ -42,8 +42,12 @@ export default class MineCeil extends Component<Props> {
         <View style={[styles.container, styles.direction]}>
           <View style={styles.direction}>
             <View style={styles.imageIcon}>
+              {/*<ImageBackground*/}
+              {/*  source={require("../../assets/icons/icon-1.png")}*/}
+              {/*  style={[styles.imageBackground, iconStyle]}*/}
+              {/*/>*/}
               <ImageBackground
-                source={require("../../assets/icons/other.png")}
+                source={require("../../assets/icons/icon-2.png")}
                 style={[styles.imageBackground, iconStyle]}
               />
             </View>
@@ -81,8 +85,10 @@ const styles = StyleSheet.create({
   imageIcon: {
     // width: 36,
     // height: 36,
-    width: 36 * 0.7,
-    height: 36 * 0.7,
+    // width: 36 * 0.7,
+    // height: 36 * 0.7,
+    width: 96 * 0.3,
+    height: 96 * 0.3,
     position: "relative",
     overflow: "hidden",
     marginRight: 8
@@ -90,8 +96,10 @@ const styles = StyleSheet.create({
   imageBackground: {
     // width: 382,
     // height: 150,
-    width: 382 * 0.7,
-    height: 150 * 0.7,
+    // width: 382 * 0.7,
+    // height: 150 * 0.7,
+    width: 500 * 0.3,
+    height: 300 * 0.3,
     position: "absolute"
   }
 });
