@@ -5,7 +5,15 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  Text
+} from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 import MineCeil from "../components/MineCeil";
 import MineMiddleView from "../components/MineMiddleView";
@@ -85,7 +93,27 @@ export default class Mine extends Component<Props> {
   // 渲染
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView
+        alwaysBounceVertical={true}
+        style={styles.container}
+      >
+        <View style={[styles.direction, styles.header]}>
+          <View style={[styles.direction, styles.headerLeft]}>
+            <Image
+              source={require("../../assets/images/header-1.png")}
+              style={styles.headerImage}
+            />
+            <Text style={styles.headerText}>Brady</Text>
+          </View>
+          <TouchableOpacity onPress={() => {}}>
+            <Icon
+              // name={focused ? "ios-home" : "ios-home"}
+              name="ios-arrow-forward"
+              size={20}
+              style={{ color: "#fff" }}
+            />
+          </TouchableOpacity>
+        </View>
         <View>
           <MineCeil
             title="我的订单"
@@ -112,7 +140,6 @@ export default class Mine extends Component<Props> {
         <View style={styles.ceil}>
           <MineCeil title="今日推荐" iconStyle={{ top: -48, left: -41.5 }} />
         </View>
-
         <View style={styles.ceil}>
           <MineCeil
             title="我要合作"
@@ -126,11 +153,31 @@ export default class Mine extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
+  direction: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
   container: {
     flex: 1,
     // justifyContent: "center",
     // alignItems: "center",
     backgroundColor: "#F5FCFF"
+  },
+  header: {
+    backgroundColor: "#108ee9",
+    padding: 12,
+    paddingRight: 8
+  },
+  headerLeft: {
+    flex: 1
+  },
+  headerText: {
+    color: "#fff",
+    marginLeft: 12
+  },
+  headerImage: {
+    width: 60,
+    height: 60
   },
   ceil: {
     marginTop: 10

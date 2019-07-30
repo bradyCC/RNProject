@@ -5,9 +5,16 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView
+} from "react-native";
 
 import SearchBox from "../components/SearchBox";
+import SwiperView from "../components/SwiperView";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -22,7 +29,8 @@ export default class Home extends Component<Props> {
     super(props);
     // 初始状态
     this.state = {
-      content: `I come from Home`
+      content: `I come from Home`,
+      scrollData: [{ id: "1", text: "1" }, { id: "2", text: "2" }]
     };
   }
 
@@ -37,9 +45,14 @@ export default class Home extends Component<Props> {
     return (
       <View style={styles.container}>
         <SearchBox />
-        <TouchableOpacity onPress={() => this.goToHomeDetail()}>
-          <Text>Home</Text>
-        </TouchableOpacity>
+        <ScrollView>
+          <TouchableOpacity onPress={() => this.goToHomeDetail()}>
+            <View style={styles.homeView}>
+              <Text>Home</Text>
+            </View>
+          </TouchableOpacity>
+          <SwiperView scrollData={this.state.scrollData} />
+        </ScrollView>
       </View>
     );
   }
@@ -51,5 +64,8 @@ const styles = StyleSheet.create({
     // justifyContent: "center",
     // alignItems: "center",
     backgroundColor: "#F5FCFF"
+  },
+  homeView: {
+    alignItems: "center"
   }
 });

@@ -206,7 +206,7 @@ const TabRouteConfigs = {
   }
 };
 const TabNavigatorConfig = {
-  initialRouteName: "Mine",
+  initialRouteName: "Home",
   tabBarOptions: {
     showIcon: true
   }
