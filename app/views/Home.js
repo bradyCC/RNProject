@@ -46,12 +46,12 @@ export default class Home extends Component<Props> {
       <View style={styles.container}>
         <SearchBox />
         <ScrollView>
+          <SwiperView scrollData={this.state.scrollData} />
           <TouchableOpacity onPress={() => this.goToHomeDetail()}>
             <View style={styles.homeView}>
               <Text>Home</Text>
             </View>
           </TouchableOpacity>
-          <SwiperView scrollData={this.state.scrollData} />
         </ScrollView>
       </View>
     );
