@@ -113,7 +113,10 @@ export default class Home extends Component<Props> {
               text="全部4家"
               iconStyle={{ top: -13, left: -5.5 }}
             />
-            <ShopCenter shopCenterData={this.state.shopCenterData} />
+            <ShopCenter
+              shopCenterData={this.state.shopCenterData}
+              props={this.props}
+            />
           </View>
 
           <View style={styles.ceil}>

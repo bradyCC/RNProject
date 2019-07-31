@@ -17,10 +17,6 @@ import {
 import Icon from "react-native-vector-icons/Ionicons";
 import PropTypes from "prop-types";
 
-// Dimensions 用于获取设备宽、高、分辨率
-const Dimensions = require("Dimensions");
-const { width, height, scale } = Dimensions.get("window");
-
 type Props = {};
 export default class TopBar extends Component<Props> {
   // 默认属性

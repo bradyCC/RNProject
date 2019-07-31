@@ -16,10 +16,6 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
-// Dimensions 用于获取设备宽、高、分辨率
-const Dimensions = require("Dimensions");
-const { width, height, scale } = Dimensions.get("window");
-
 type Props = {};
 export default class SearchBox extends Component<Props> {
   // 默认属性

@@ -15,10 +15,6 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 
-// Dimensions 用于获取设备宽、高、分辨率
-const Dimensions = require("Dimensions");
-const { width, height, scale } = Dimensions.get("window");
-
 type Props = {};
 export default class ShopCenter extends Component<Props> {
   // 默认属性
@@ -38,19 +34,27 @@ export default class ShopCenter extends Component<Props> {
 
   // 渲染
   render() {
-    const { shopCenterData } = this.props;
+    const { shopCenterData, props } = this.props;
     return (
       <View style={styles.container}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           {shopCenterData.map(item => {
             return (
-              <TouchableOpacity onPress={() => {}} key={item.id}>
+              <TouchableOpacity
+                onPress={() =>
+                  props.navigation.navigate("ShopCenterDetail", {
+                    id: item.id,
+                    shopname: item.shopname
+                  })
+                }
+                key={item.id}
+              >
                 <View style={styles.viewStyle}>
                   <Image
                     source={{ uri: item.shopImage }}
                     style={styles.shopImage}
                   />
-                  <Text>{item.shopname}</Text>
+                  <Text style={styles.textStyle}>{item.shopname}</Text>
                 </View>
               </TouchableOpacity>
             );
@@ -77,6 +81,10 @@ const styles = StyleSheet.create({
   },
   shopImage: {
     width: 120,
-    height: 100
+    height: 100,
+    borderRadius: 10
+  },
+  textStyle: {
+    marginTop: 8
   }
 });

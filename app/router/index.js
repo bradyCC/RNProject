@@ -20,6 +20,7 @@ import Mine from "../views/Mine";
 import More from "../views/More";
 
 import HomeDetail from "../views/HomeDetail";
+import ShopCenterDetail from "../views/ShopCenterDetail";
 // import ShopDetail from "../views/ShopDetail";
 // import MineDetail from "../views/MineDetail";
 // import MoreInfo from "../views/MoreInfo";
@@ -37,9 +38,15 @@ const HomeRouteConfigs = {
   },
   HomeDetail: {
     screen: HomeDetail,
-    navigationOptions: {
-      title: "详情页"
-    }
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.title}`
+    })
+  },
+  ShopCenterDetail: {
+    screen: ShopCenterDetail,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.shopname}`
+    })
   }
 };
 const ShopRouteConfigs = {

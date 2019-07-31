@@ -8,10 +8,6 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 
-// Dimensions 用于获取设备宽、高、分辨率
-const Dimensions = require("Dimensions");
-const { width, height, scale } = Dimensions.get("window");
-
 type Props = {};
 export default class HomeBottomView extends Component<Props> {
   // 默认属性
