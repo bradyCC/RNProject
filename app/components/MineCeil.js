@@ -100,6 +100,8 @@ const styles = StyleSheet.create({
     // height: 150 * 0.7,
     width: 500 * 0.3,
     height: 300 * 0.3,
-    position: "absolute"
+    position: "absolute",
+    top: -13,
+    left: -5.5
   }
 });

@@ -81,7 +81,7 @@ export default class HomeBottomView extends Component<Props> {
   }
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
   }
 }
 
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // justifyContent: "center",
     // alignItems: "center",
-    backgroundColor: "#eee"
+    // backgroundColor: "#fff"
   },
   middleView: {
     marginTop: 10
