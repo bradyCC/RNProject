@@ -5,14 +5,13 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
+import { StyleSheet, View, Text, ScrollView, Dimensions } from 'react-native';
 import PropTypes from "prop-types";
 
 import ListView from "./ListView";
 
 // Dimensions 用于获取设备宽、高、分辨率
-const Dimensions = require("Dimensions");
-const { width, height, scale } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 
 type Props = {};
 export default class SwiperView extends Component<Props> {
