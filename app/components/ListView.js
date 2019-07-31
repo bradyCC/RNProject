@@ -15,6 +15,7 @@ import {
   Dimensions,
   Alert
 } from "react-native";
+import PropTypes from "prop-types";
 
 // Dimensions 用于获取设备宽、高、分辨率
 const { width, height } = Dimensions.get("window");
@@ -25,7 +26,9 @@ export default class ListView extends Component<Props> {
   static defaultProps = {};
 
   // 属性类型
-  static propTypes = {};
+  static propTypes = {
+    dataList: PropTypes.array
+  };
 
   // 构造
   constructor(props) {

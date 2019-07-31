@@ -19,6 +19,7 @@ import HomeMiddleView from "../components/HomeMiddleView";
 import HomeBottomView from "../components/HomeBottomView";
 import MineCeil from "../components/MineCeil";
 import ShopCenter from "../components/ShopCenter";
+import GuessListView from "../components/GuessListView";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -87,6 +88,68 @@ export default class Home extends Component<Props> {
           shopImage:
             "https://a3.att.hudong.com/71/89/20300001024098139605893448223.jpg"
         }
+      ],
+      guessListData: [
+        {
+          id: "1",
+          itemImage:
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564569038286&di=395ff2f7dcc24a969ec9a11a195b161b&imgtype=0&src=http%3A%2F%2Fpic21.nipic.com%2F20120513%2F8471963_115143376000_2.jpg",
+          itemName: "干锅牛三宝",
+          desc: "100元代金券1张，可叠加 100元代金券1张，可叠加 100元代金券1张，可叠加 重要的事情说三遍",
+          price: "20.5",
+          sales: "4308",
+          distance: ">100"
+        },
+        {
+          id: "2",
+          itemImage:
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564569038286&di=395ff2f7dcc24a969ec9a11a195b161b&imgtype=0&src=http%3A%2F%2Fpic21.nipic.com%2F20120513%2F8471963_115143376000_2.jpg",
+          itemName: "干锅牛三宝",
+          desc: "100元代金券1张，可叠加",
+          price: "20.5",
+          sales: "4308",
+          distance: ">100"
+        },
+        {
+          id: "3",
+          itemImage:
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564569038286&di=395ff2f7dcc24a969ec9a11a195b161b&imgtype=0&src=http%3A%2F%2Fpic21.nipic.com%2F20120513%2F8471963_115143376000_2.jpg",
+          itemName: "干锅牛三宝",
+          desc: "100元代金券1张，可叠加",
+          price: "20.5",
+          sales: "4308",
+          distance: ">100"
+        },
+        {
+          id: "4",
+          itemImage:
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564569038286&di=395ff2f7dcc24a969ec9a11a195b161b&imgtype=0&src=http%3A%2F%2Fpic21.nipic.com%2F20120513%2F8471963_115143376000_2.jpg",
+          itemName: "干锅牛三宝",
+          desc: "100元代金券1张，可叠加",
+          price: "20.5",
+          sales: "4308",
+          distance: ">100"
+        },
+        {
+          id: "5",
+          itemImage:
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564569038286&di=395ff2f7dcc24a969ec9a11a195b161b&imgtype=0&src=http%3A%2F%2Fpic21.nipic.com%2F20120513%2F8471963_115143376000_2.jpg",
+          itemName: "干锅牛三宝",
+          desc: "100元代金券1张，可叠加",
+          price: "20.5",
+          sales: "4308",
+          distance: ">100"
+        },
+        {
+          id: "6",
+          itemImage:
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564569038286&di=395ff2f7dcc24a969ec9a11a195b161b&imgtype=0&src=http%3A%2F%2Fpic21.nipic.com%2F20120513%2F8471963_115143376000_2.jpg",
+          itemName: "干锅牛三宝",
+          desc: "100元代金券1张，可叠加",
+          price: "20.5",
+          sales: "4308",
+          distance: ">100"
+        }
       ]
     };
   }
@@ -129,13 +192,17 @@ export default class Home extends Component<Props> {
 
           <View style={styles.ceil}>
             <MineCeil title="猜你喜欢" iconStyle={{ top: -13, left: -78 }} />
+            <GuessListView
+              guessListData={this.state.guessListData}
+              props={this.props}
+            />
           </View>
 
-          <TouchableOpacity onPress={() => this.goToHomeDetail()}>
-            <View style={[styles.homeView, styles.ceil]}>
-              <Text>Home</Text>
-            </View>
-          </TouchableOpacity>
+          {/*<TouchableOpacity onPress={() => this.goToHomeDetail()}>*/}
+          {/*  <View style={[styles.homeView, styles.ceil]}>*/}
+          {/*    <Text>Home</Text>*/}
+          {/*  </View>*/}
+          {/*</TouchableOpacity>*/}
         </ScrollView>
       </View>
     );
