@@ -15,6 +15,8 @@ import {
 
 import SearchBox from "../components/SearchBox";
 import SwiperView from "../components/SwiperView";
+import HomeMiddleView from "../components/HomeMiddleView";
+import HomeBottomView from "../components/HomeBottomView";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -47,6 +49,8 @@ export default class Home extends Component<Props> {
         <SearchBox />
         <ScrollView>
           <SwiperView scrollData={this.state.scrollData} />
+          <HomeMiddleView />
+          <HomeBottomView />
           <TouchableOpacity onPress={() => this.goToHomeDetail()}>
             <View style={styles.homeView}>
               <Text>Home</Text>
