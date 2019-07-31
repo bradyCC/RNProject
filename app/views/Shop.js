@@ -5,7 +5,11 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Dimensions } from "react-native";
+import { WebView } from "react-native-webview";
+
+// Dimensions 用于获取设备宽、高、分辨率
+const { width, height } = Dimensions.get("window");
 
 type Props = {};
 export default class Shop extends Component<Props> {
@@ -26,7 +30,10 @@ export default class Shop extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Shop</Text>
+        <WebView
+          style={{ width: width, height: height }}
+          source={{ uri: "https://i.meituan.com/" }}
+        />
       </View>
     );
   }

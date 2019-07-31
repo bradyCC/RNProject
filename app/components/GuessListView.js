@@ -55,11 +55,11 @@ export default class GuessListView extends Component<Props> {
               <View style={styles.itemViewRight}>
                 <View style={styles.itemViewRightTop}>
                   <Text style={styles.itemNameStyle}>{item.itemName}</Text>
-                  <Text style={styles.distanceStyle}>{item.distance}</Text>
+                  <Text style={styles.distanceStyle}>{item.distance}m</Text>
                 </View>
                 <Text style={styles.descStyle}>{item.desc}</Text>
                 <View style={styles.itemViewRightBottom}>
-                  <Text style={styles.priceStyle}>￥{item.price}</Text>
+                  <Text style={styles.priceStyle}>售价：￥{item.price}</Text>
                   <Text style={styles.salesStyle}>已售{item.sales}</Text>
                 </View>
               </View>
