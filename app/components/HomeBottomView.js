@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Alert } from "react-native";
 import PropTypes from "prop-types";
 
 type Props = {};
@@ -46,9 +46,12 @@ export default class HomeBottomView extends Component<Props> {
                                 subView.backgroundColor
                               ]}
                               key={subView.id}
+                              onPress={() => Alert.alert(subView.text)}
                             >
                               <View>
-                                <Text style={styles.textColor}>{subView.text}</Text>
+                                <Text style={styles.textColor}>
+                                  {subView.text}
+                                </Text>
                               </View>
                             </TouchableOpacity>
                           );
@@ -63,6 +66,7 @@ export default class HomeBottomView extends Component<Props> {
                 <TouchableOpacity
                   style={[styles.middleViewTop, item.backgroundColor]}
                   key={index}
+                  onPress={() => Alert.alert(item.text)}
                 >
                   <View>
                     <Text style={styles.textColor}>{item.text}</Text>
@@ -83,7 +87,7 @@ export default class HomeBottomView extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
     // justifyContent: "center",
     // alignItems: "center",
     // backgroundColor: "#fff"

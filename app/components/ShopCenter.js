@@ -65,7 +65,7 @@ export default class ShopCenter extends Component<Props> {
   }
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
   }
 }
 

@@ -11,7 +11,8 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  Text
+  Text,
+  Alert
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -93,10 +94,7 @@ export default class Mine extends Component<Props> {
   // 渲染
   render() {
     return (
-      <ScrollView
-        alwaysBounceVertical={true}
-        style={styles.container}
-      >
+      <ScrollView alwaysBounceVertical={true} style={styles.container}>
         <View style={[styles.direction, styles.header]}>
           <View style={[styles.direction, styles.headerLeft]}>
             <Image
@@ -105,7 +103,7 @@ export default class Mine extends Component<Props> {
             />
             <Text style={styles.headerText}>Brady</Text>
           </View>
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={() => Alert.alert("Brady")}>
             <Icon
               // name={focused ? "ios-home" : "ios-home"}
               name="ios-arrow-forward"

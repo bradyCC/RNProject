@@ -11,7 +11,8 @@ import {
   Text,
   TouchableOpacity,
   Switch,
-  Platform
+  Platform,
+  Alert
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import PropTypes from "prop-types";
@@ -43,7 +44,7 @@ export default class MoreCeil extends Component<Props> {
     let content = "";
     if (icon) {
       content = (
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => Alert.alert(text)}>
           <View style={styles.direction}>
             <Text style={{ marginRight: 10 }}>{text}</Text>
             <Icon
@@ -68,7 +69,7 @@ export default class MoreCeil extends Component<Props> {
       );
     }
     return (
-      <TouchableOpacity onPress={() => {}}>
+      <TouchableOpacity onPress={() => Alert.alert(title)}>
         <View style={[styles.container, styles.direction]}>
           <View>
             <Text>{title}</Text>

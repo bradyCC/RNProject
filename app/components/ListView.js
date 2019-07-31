@@ -12,7 +12,8 @@ import {
   FlatList,
   TouchableOpacity,
   ImageBackground,
-  Dimensions
+  Dimensions,
+  Alert
 } from "react-native";
 
 // Dimensions 用于获取设备宽、高、分辨率
@@ -41,7 +42,10 @@ export default class ListView extends Component<Props> {
         <FlatList
           data={dataList}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => {}} key={item.id}>
+            <TouchableOpacity
+              onPress={() => Alert.alert(item.text)}
+              key={item.id}
+            >
               <View style={styles.middleView}>
                 <View style={styles.imageIcon}>
                   <ImageBackground

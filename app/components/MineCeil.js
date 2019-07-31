@@ -10,7 +10,8 @@ import {
   View,
   Text,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import PropTypes from "prop-types";
@@ -38,7 +39,7 @@ export default class MineCeil extends Component<Props> {
   render() {
     const { title, text, iconStyle } = this.props;
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => Alert.alert(text)}>
         <View style={[styles.container, styles.direction]}>
           <View style={styles.direction}>
             <View style={styles.imageIcon}>
@@ -53,7 +54,7 @@ export default class MineCeil extends Component<Props> {
             </View>
             <Text>{title}</Text>
           </View>
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={() => Alert.alert(text)}>
             <View style={styles.direction}>
               <Text style={{ marginRight: 10 }}>{text}</Text>
               <Icon

@@ -10,7 +10,8 @@ import {
   View,
   Text,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from "react-native";
 import PropTypes from "prop-types";
 
@@ -38,7 +39,10 @@ export default class MineMiddleView extends Component<Props> {
       <View style={styles.container}>
         {data.map(item => {
           return (
-            <TouchableOpacity onPress={() => {}} key={item.id}>
+            <TouchableOpacity
+              onPress={() => Alert.alert(item.text)}
+              key={item.id}
+            >
               <View style={styles.middleView}>
                 <View style={styles.imageIcon}>
                   <ImageBackground
