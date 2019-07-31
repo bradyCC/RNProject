@@ -5,7 +5,12 @@
  * @Description:
  */
 import React, { Component } from "react";
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import PropTypes from "prop-types";
+
+// Dimensions 用于获取设备宽、高、分辨率
+const Dimensions = require("Dimensions");
+const { width, height, scale } = Dimensions.get("window");
 
 type Props = {};
 export default class HomeBottomView extends Component<Props> {
@@ -13,7 +18,9 @@ export default class HomeBottomView extends Component<Props> {
   static defaultProps = {};
 
   // 属性类型
-  static propTypes = {};
+  static propTypes = {
+    bottomViewData: PropTypes.array
+  };
 
   // 构造
   constructor(props) {
@@ -24,51 +31,57 @@ export default class HomeBottomView extends Component<Props> {
 
   // 渲染
   render() {
+    const { bottomViewData } = this.props;
     return (
       <View style={styles.container}>
         <View style={styles.middleView}>
-          <TouchableOpacity style={styles.middleViewTop}>
-            <View>
-              <Text style={styles.textColor}>Top</Text>
-            </View>
-          </TouchableOpacity>
-          <View style={styles.middleViewBottom}>
-            <View style={styles.viewStyle}>
-              <TouchableOpacity
-                style={[styles.subViewStyle, styles.subTopViewStyle]}
-              >
-                <View>
-                  <Text style={styles.textColor}>1</Text>
+          {bottomViewData.map((item, index) => {
+            if (item instanceof Array) {
+              return (
+                <View style={styles.middleViewBottom} key={index}>
+                  {item.map((subItem, subIndex) => {
+                    return (
+                      <View style={styles.viewStyle} key={subIndex}>
+                        {subItem.map(subView => {
+                          return (
+                            <TouchableOpacity
+                              style={[
+                                styles.subViewStyle,
+                                subView.backgroundColor
+                              ]}
+                              key={subView.id}
+                            >
+                              <View>
+                                <Text style={styles.textColor}>{subView.text}</Text>
+                              </View>
+                            </TouchableOpacity>
+                          );
+                        })}
+                      </View>
+                    );
+                  })}
                 </View>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[styles.subViewStyle, styles.subBottomViewStyle]}
-              >
-                <View>
-                  <Text style={styles.textColor}>2</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.viewStyle}>
-              <TouchableOpacity
-                style={[styles.subViewStyle, styles.subTopViewStyle2]}
-              >
-                <View>
-                  <Text style={styles.textColor}>3</Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[styles.subViewStyle, styles.subBottomViewStyle2]}
-              >
-                <View>
-                  <Text style={styles.textColor}>4</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          </View>
+              );
+            } else {
+              return (
+                <TouchableOpacity
+                  style={[styles.middleViewTop, item.backgroundColor]}
+                  key={index}
+                >
+                  <View>
+                    <Text style={styles.textColor}>{item.text}</Text>
+                  </View>
+                </TouchableOpacity>
+              );
+            }
+          })}
         </View>
       </View>
     );
+  }
+
+  componentDidMount() {
+    console.log(this.props);
   }
 }
 
@@ -85,8 +98,7 @@ const styles = StyleSheet.create({
   middleViewTop: {
     justifyContent: "center",
     alignItems: "center",
-    height: 75,
-    backgroundColor: "#fff"
+    height: 75
   },
   middleViewBottom: {
     flexDirection: "row"

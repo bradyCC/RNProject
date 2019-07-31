@@ -6,6 +6,7 @@
  */
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import PropTypes from "prop-types";
 
 type Props = {};
 export default class HomeMiddleView extends Component<Props> {
@@ -13,7 +14,9 @@ export default class HomeMiddleView extends Component<Props> {
   static defaultProps = {};
 
   // 属性类型
-  static propTypes = {};
+  static propTypes = {
+    middleViewData: PropTypes.array
+  };
 
   // 构造
   constructor(props) {
@@ -24,33 +27,52 @@ export default class HomeMiddleView extends Component<Props> {
 
   // 渲染
   render() {
+    const { middleViewData } = this.props;
     return (
       <View style={styles.container}>
         <View style={styles.middleView}>
-          <TouchableOpacity style={[styles.viewStyle, styles.viewLeft]}>
-            <View>
-              <Text style={styles.textColor}>1</Text>
-            </View>
-          </TouchableOpacity>
-          <View style={[styles.viewStyle, styles.viewRight]}>
-            <TouchableOpacity
-              style={[styles.subViewStyle, styles.subTopViewStyle]}
-            >
-              <View>
-                <Text style={styles.textColor}>2</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.subViewStyle, styles.subBottomViewStyle]}
-            >
-              <View>
-                <Text style={styles.textColor}>3</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
+          {middleViewData.map((item, index) => {
+            if (item instanceof Array) {
+              return (
+                <View style={styles.viewStyle} key={index}>
+                  {item.map(subItem => {
+                    return (
+                      <TouchableOpacity
+                        style={[styles.subViewStyle, subItem.backgroundColor]}
+                        key={subItem.id}
+                      >
+                        <View>
+                          <Text style={styles.textColor}>{subItem.text}</Text>
+                        </View>
+                      </TouchableOpacity>
+                    );
+                  })}
+                </View>
+              );
+            } else {
+              return (
+                <TouchableOpacity
+                  style={[
+                    styles.viewStyle,
+                    styles.viewLeft,
+                    item.backgroundColor
+                  ]}
+                  key={index}
+                >
+                  <View>
+                    <Text style={styles.textColor}>{item.text}</Text>
+                  </View>
+                </TouchableOpacity>
+              );
+            }
+          })}
         </View>
       </View>
     );
+  }
+
+  componentDidMount() {
+    // console.log(this.props);
   }
 }
 
@@ -71,22 +93,12 @@ const styles = StyleSheet.create({
   },
   viewLeft: {
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#ff0"
-  },
-  viewRight: {
-    backgroundColor: "#0ff"
+    alignItems: "center"
   },
   subViewStyle: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
-  },
-  subTopViewStyle: {
-    backgroundColor: "#0ff"
-  },
-  subBottomViewStyle: {
-    backgroundColor: "#0f0"
   },
   textColor: {
     color: "#f00"

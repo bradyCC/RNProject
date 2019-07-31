@@ -32,7 +32,35 @@ export default class Home extends Component<Props> {
     // 初始状态
     this.state = {
       content: `I come from Home`,
-      scrollData: [{ id: "1", text: "1" }, { id: "2", text: "2" }]
+      scrollData: [{ id: "1", text: "1" }, { id: "2", text: "2" }],
+      middleViewData: [
+        { id: "1", text: "1", backgroundColor: { backgroundColor: "#ff0" } },
+        [
+          { id: "2", text: "2", backgroundColor: { backgroundColor: "#0ff" } },
+          { id: "3", text: "3", backgroundColor: { backgroundColor: "#0f0" } }
+        ]
+      ],
+      bottomViewData: [
+        { id: "1", text: "1", backgroundColor: "#fff" },
+        [
+          [
+            {
+              id: "2",
+              text: "2",
+              backgroundColor: { backgroundColor: "#0ff" }
+            },
+            { id: "3", text: "3", backgroundColor: { backgroundColor: "#0f0" } }
+          ],
+          [
+            {
+              id: "4",
+              text: "4",
+              backgroundColor: { backgroundColor: "#000" }
+            },
+            { id: "5", text: "5", backgroundColor: { backgroundColor: "#ff0" } }
+          ]
+        ]
+      ]
     };
   }
 
@@ -49,8 +77,8 @@ export default class Home extends Component<Props> {
         <SearchBox />
         <ScrollView>
           <SwiperView scrollData={this.state.scrollData} />
-          <HomeMiddleView />
-          <HomeBottomView />
+          <HomeMiddleView middleViewData={this.state.middleViewData} />
+          <HomeBottomView bottomViewData={this.state.bottomViewData} />
           <TouchableOpacity onPress={() => this.goToHomeDetail()}>
             <View style={styles.homeView}>
               <Text>Home</Text>

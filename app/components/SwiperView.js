@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, ScrollView, FlatList } from "react-native";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
 import PropTypes from "prop-types";
 
 import ListView from "./ListView";
@@ -99,7 +99,7 @@ export default class SwiperView extends Component<Props> {
   }
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
   }
 }
 
